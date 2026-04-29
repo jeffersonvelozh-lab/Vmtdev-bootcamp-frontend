@@ -1,0 +1,42 @@
+body {
+  margin: 5px;
+  min-height: 10vh;
+  background: linear-gradient(to bottom, #4d9fc2, #19333b); /* puedes cambiar este color */
+  color: white;
+      }
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  margin-left: auto;
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a:hover { text-decoration: underline;}
+.nav-links { display: flex; gap: 2rem; }
+
+main{
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  margin: 5px;
+  margin-left: auto;
+  padding: 10px;
+  display: flex;
+  width: 100%;
+        }
+
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--ink); }
+.footer-links { display: flex; gap: 2rem; }
