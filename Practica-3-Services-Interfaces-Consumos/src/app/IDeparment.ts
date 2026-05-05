@@ -1,5 +1,5 @@
 export interface Departments {
-  id: number;
+  id: string;
   name: string;
   description: string;
   managerName: string;

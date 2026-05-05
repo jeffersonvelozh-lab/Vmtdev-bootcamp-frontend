@@ -1,5 +1,5 @@
 
-<h2>Lista de empleados</h2>
+
 @if (loading) {
   <div>Cargando...</div>
 }
@@ -10,8 +10,15 @@
 
 @if (!loading && !error) {
 
-    @for (employee of employees; track employee.id) {
+  <h2>Lista de empleados</h2>
 
+  <div>
+  <button class="btn_agregar" (click)="agregarEmployee()" >Agregar</button>
+  <button class="btn_editar" (click)="editarEmployee()" >Editar</button>
+  </div>
+<div class="card">
+  @for (employee of employees; track employee.id) {
+    <div class="grid">
       <h3>{{ employee.id }}</h3>
       <img [src]="employee.avatar" width="100">
       <p>Name: {{ employee.name }}</p>
@@ -20,6 +27,11 @@
       <p>Department: {{ employee.department }}</p>
       <p>Position: {{ employee.position }}</p>
       <p>Salary: {{ employee.salary }}</p>
+      <button class="btn_elminar" (click)="eliminarEmployee(employee.id)">Eliminar</button>
+  </div>
+
     }
+</div>
+
   }
 

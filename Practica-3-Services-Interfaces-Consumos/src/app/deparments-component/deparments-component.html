@@ -1,5 +1,7 @@
 <h2>Lista de Departamentos</h2>
 
+
+
 @if (loading) {
   <div>Cargando...</div>
 }
@@ -10,12 +12,19 @@
 </div>
 }
 
-
-@for(department of departments; track department.id ){
 <div>
-  <h3>{{ department.id }}</h3>
-  <p>Name: {{ department.name }}</p>
-  <p>Manager Name: {{ department.managerName }}</p>
-  <p>Description: {{ department.description }}</p>
+  <button class="btn-add" (click)="agregarDepartments()" >Agregar</button>
+  <button class="btn-edit" (click)="editarDepartment()" >Editar</button>
 </div>
-}
+<div class="card">
+  @for(department of departments; track department.id ){
+    <div class="grid">
+      <h3>{{ department.id }}</h3>
+      <p>Name: {{ department.name }}</p>
+      <p>Manager Name: {{ department.managerName }}</p>
+      <p>Description: {{ department.description }}</p>
+      <button class="btn-delete" (click)="eliminarDepartment(department.id) ">Eliminar</button>
+    </div>
+  }
+</div>
+

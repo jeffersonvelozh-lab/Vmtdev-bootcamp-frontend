@@ -19,4 +19,20 @@ export class DepartmentsServices {
   getById(id: string): Observable<Departments> {
     return this._http.get<Departments>(`${this.apiUrl}/${id}`);
   }
+
+  crearDepartment(departments: Partial<Departments>): Observable<Departments> {
+      return this._http.post<Departments>(`${this.apiUrl}`, departments);
+    }
+
+    actualizacionDepartment(id: string, departments: Partial<Departments>): Observable<Departments> {
+      return this._http.put<Departments>(`${this.apiUrl}/${id}`, departments);
+    }
+
+    eliminarDepartment(id: string): Observable<void> {
+      return this._http.delete<void>(`${this.apiUrl}/${id}`);
+    }
+
+
+
+
 }
