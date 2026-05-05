@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   appName: string = 'Portal de notas';
   studentName: string = 'Jefferson Veloz';
-  Connected: boolean = false;
+  Connected: boolean = true;
 }

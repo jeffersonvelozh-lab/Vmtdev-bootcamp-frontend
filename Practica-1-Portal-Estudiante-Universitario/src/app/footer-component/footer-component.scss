@@ -1,10 +1,18 @@
 footer {
-  background-color: #333;
-  color: white;
+  color: black;
   text-align: center;
-  padding: 15px;
-        }
+  padding: 0 10px;
+  display: block;
+  background-color: #f8fafc;
+}
 
-footer a { color: var(--muted); text-decoration: none; }
-footer a:hover { color: var(--ink); }
+button{
+  font-size: 13px;
+  margin: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #1e293b;
+  cursor: pointer;
+}
+
 .footer-links { display: flex; gap: 2rem; }

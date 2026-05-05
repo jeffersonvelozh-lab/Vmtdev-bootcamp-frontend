@@ -1,29 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Header Component</title>
-    <link rel="stylesheet" href="header-component.scss">
-  </head>
-<body>
-    <!--Inicio de página-->
+  <!--Inicio de página-->
     <header class="header">
         <nav>
-            <div class="nav-links">
-                <h1>{{appName}}</h1>
-                <p>
-                  Estudiante:
-                  <span [style.color] = "Connected ? 'green': 'grey'">
-                    {{studentName}}
-                  </span>
-                </p>
-                <button (click)="Connected = !Connected">
-                  {{Connected ? 'Conectar':'Desconectar'}}
-                </button>
-            </div>
+          <h1>{{appName}}</h1>
+          <div>
+            <p>
+              Estudiante:
+              <span [style.color] = "Connected ? 'grey': 'green'">
+                {{ studentName }}
+              </span>
+              <button (click)="Connected = !Connected">
+                {{Connected ? 'Conectar':'Desconectar'}}
+              </button>
+            </p>
+          </div>
         </nav>
     </header>
-</body>
-</html>

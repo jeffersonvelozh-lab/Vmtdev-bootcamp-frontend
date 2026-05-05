@@ -1,0 +1,25 @@
+
+<h2>Lista de empleados</h2>
+@if (loading) {
+  <div>Cargando...</div>
+}
+
+@if (error) {
+  <div>{{ error }}</div>
+}
+
+@if (!loading && !error) {
+
+    @for (employee of employees; track employee.id) {
+
+      <h3>{{ employee.id }}</h3>
+      <img [src]="employee.avatar" width="100">
+      <p>Name: {{ employee.name }}</p>
+      <p>Email: {{ employee.email }}</p>
+      <p>Phone: {{ employee.phone }}</p>
+      <p>Department: {{ employee.department }}</p>
+      <p>Position: {{ employee.position }}</p>
+      <p>Salary: {{ employee.salary }}</p>
+    }
+  }
+

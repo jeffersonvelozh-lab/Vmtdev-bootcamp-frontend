@@ -1,20 +1,34 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mi primer componente</title>
-    <link rel="stylesheet" href="body-component.scss">
-  </head>
-<body>
+<section>
 
+  <!-- Input con ngModel -->
+  <input [(ngModel)]="busqueda" placeholder="Buscar materia..." />
+  <p>Buscando: {{ busqueda }}</p>
 
-    <!--este es el cuerpo de mi página-->
-    <main>
-        <h2>Bienvenido</h2>
-        <p>Este es el contenido de tu página.</p>
-    </main>
+  <!-- Lista de materias -->
+  <ul>
+    @for (materia of materias; track materia.nombre) {
+      <li [ngClass]="materia.aprobada ? 'aprobada' : 'reprobada'">
+        {{ materia.nombre }} — {{ materia.creditos }} créditos
+      </li>
+    } @empty {
+      <li>No tienes materias registradas</li>
+    }
+  </ul>
 
-</body>
-</html>
+  <!-- Barra de progreso -->
+  <p>Créditos: {{ creditos }} / 120</p>
+  <div class="barra-fondo">
+    <div
+      class="barra-progreso"
+      [style.width.%]="porcentaje"
+      [style.background-color]="colorBarra">
+    </div>
+  </div>
+  <p>{{ porcentaje }}%</p>
+
+  <!-- Botones -->
+  <button (click)="restar()">- 10</button>
+  <button (click)="sumar()">+ 10</button>
+
+</section>
+

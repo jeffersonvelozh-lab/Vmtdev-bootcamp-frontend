@@ -1,0 +1,21 @@
+<h2>Lista de Departamentos</h2>
+
+@if (loading) {
+  <div>Cargando...</div>
+}
+
+@if( errorMessage){
+<div>
+  {{ errorMessage }}
+</div>
+}
+
+
+@for(department of departments; track department.id ){
+<div>
+  <h3>{{ department.id }}</h3>
+  <p>Name: {{ department.name }}</p>
+  <p>Manager Name: {{ department.managerName }}</p>
+  <p>Description: {{ department.description }}</p>
+</div>
+}

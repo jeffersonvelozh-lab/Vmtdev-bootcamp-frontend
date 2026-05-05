@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './footer-component.html',
   styleUrl: './footer-component.scss',
 })
-export class FooterComponent {}
+export class FooterComponent {
+  currentYear: number = new Date().getFullYear();
+  copyrightMessage: string = "";
+
+  generateCopyright(): void {
+    this.copyrightMessage = "© Todos los derechos reservados";
+  }
+
+}
