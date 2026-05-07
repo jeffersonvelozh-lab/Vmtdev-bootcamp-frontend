@@ -1,0 +1,29 @@
+<h2>Lista de pasajeros</h2>
+
+@if (loading) {
+  <div>Cargando...</div>
+}
+
+@if( errorMessage){
+<div>
+  {{ errorMessage }}
+</div>
+}
+
+<div>
+  <button class="btn-add" (click)="agregarPassenger()" >Agregar</button>
+  <button class="btn-edit" (click)="editarPassenger()" >Editar</button>
+</div>
+<div class="grid">
+  @for(pasajero of passenger; track pasajero.id ){
+    <div class="card">
+      <h3>{{ pasajero.id }}</h3>
+      <img [src]="pasajero.avatar" width="100">
+      <p>Nombre: {{ pasajero.name }}</p>
+      <p>Email: {{ pasajero.email }}</p>
+      <p>Nacionalidad: {{ pasajero.nationality }}</p>
+      <button class="btn_delete" (click)="eliminarPassenger(pasajero.id)">Eliminar</button>
+    </div>
+  }
+
+</div>

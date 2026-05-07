@@ -16,6 +16,7 @@
   <button class="btn_agregar" (click)="agregarEmployee()" >Agregar</button>
   <button class="btn_editar" (click)="editarEmployee()" >Editar</button>
   </div>
+
 <div class="card">
   @for (employee of employees; track employee.id) {
     <div class="grid">
@@ -28,10 +29,9 @@
       <p>Position: {{ employee.position }}</p>
       <p>Salary: {{ employee.salary }}</p>
       <button class="btn_elminar" (click)="eliminarEmployee(employee.id)">Eliminar</button>
-  </div>
-
-    }
+    </div>
+  }
 </div>
 
-  }
+}
 

@@ -1,0 +1,30 @@
+<h2>Lista de vuelos</h2>
+
+@if (loading) {
+  <div>Cargando...</div>
+}
+
+@if( erroMessage){
+<div>
+  {{ erroMessage }}
+</div>
+}
+
+<div>
+  <button class="btn-add" (click)="agregarFlights()" >Agregar</button>
+  <button class="btn-edit" (click)="editarflights()" >Editar</button>
+</div>
+<div class="grid">
+  @for(flight of flights; track flight.id ){
+    <div class="card">
+      <h3>{{ flight.id }}</h3>
+      <p>Flight Number: {{ flight.flightNumber }}</p>
+      <p>Departure: {{ flight.departure }}</p>
+      <p>Origin: {{ flight.origin }}</p>
+      <p>Destination: {{ flight.destination }}</p>
+      <p>Price: {{ flight.price }}</p>
+      <button class="btn_delete" (click)="eliminarDepartment(flight.id)">Eliminar</button>
+    </div>
+  }
+
+</div>

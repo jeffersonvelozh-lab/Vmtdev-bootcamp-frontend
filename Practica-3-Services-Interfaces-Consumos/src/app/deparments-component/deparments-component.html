@@ -1,7 +1,5 @@
 <h2>Lista de Departamentos</h2>
 
-
-
 @if (loading) {
   <div>Cargando...</div>
 }
@@ -23,8 +21,9 @@
       <p>Name: {{ department.name }}</p>
       <p>Manager Name: {{ department.managerName }}</p>
       <p>Description: {{ department.description }}</p>
-      <button class="btn-delete" (click)="eliminarDepartment(department.id) ">Eliminar</button>
+      <button class="btn_delete" (click)="eliminarDepartment(department.id)">Eliminar</button>
     </div>
   }
+
 </div>
 

@@ -84,7 +84,7 @@ export class EmployeesComponent implements OnInit {
     eliminarEmployee(id: string) {
       this.employeeService.eliminarEmployee(id).subscribe({
         next: () => {
-          this.employees = this.employees.filter(e=> e.id !== id);
+          this.employees = this.employees.filter(e => e.id !== id);
         },
         error: () => {
           this.error = 'Error al eliminar al empleado';

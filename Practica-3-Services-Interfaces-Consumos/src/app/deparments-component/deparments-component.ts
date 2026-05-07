@@ -64,7 +64,7 @@ export class DeparmentsComponent implements OnInit {
   eliminarDepartment(id: string) {
     this.departmentService.eliminarDepartment(id).subscribe({
       next: () => {
-        this.departments = this.departments.filter(e=> e.id !== id);
+        this.departments = this.departments.filter(e => e.id !== id);
       },
       error: () => {
         this.errorMessage = 'Error al eliminar el departamento';
