@@ -1,0 +1,32 @@
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { student } from '../../interfaces/Student';
+import { StudentService } from '../../services/students/student';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+@Component({
+  selector: 'app-studentslist',
+  imports: [MatButtonModule, MatCardModule, MatDividerModule, MatProgressSpinnerModule],
+  templateUrl: './studentslist.html',
+  styleUrl: './studentslist.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class Studentslist implements OnInit {
+
+  student: student[] = [];
+  errorMessage: string = '';
+  loading: boolean = false;
+
+  constructor(private studentService: StudentService) {};
+
+  ngOnInit(): void {
+    this.studentService.getStudents().subscribe({
+      next: (data) => this.student = data,
+      error: () => this.errorMessage = 'Error al cargar los estudiantes'
+    })
+  }
+
+
+}
