@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.course-card {
+  max-width: 250px;
+  margin: 10px;
+}
+
+.course-card .button{
+  position: relative;
+}
+
+.header-image {
+  background-size: cover;
+}

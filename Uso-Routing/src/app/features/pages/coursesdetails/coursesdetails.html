@@ -1,1 +1,14 @@
-<p>coursesdetails works!</p>
+@if (course) {
+  <mat-card>
+    <h2>{{ course.name }}</h2>
+
+    <p>Instructor {{ course.instructor }}</p>
+    <p>Descripción {{ course.description }}</p>
+
+    <mat-chip>
+      {{ course.level }}
+    </mat-chip>
+
+    <button mat-raised-button routerLink="/courses">Volver</button>
+  </mat-card>
+}

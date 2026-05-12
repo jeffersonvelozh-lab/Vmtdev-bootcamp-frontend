@@ -1,1 +1,15 @@
-<p>studentsdetails works!</p>
+@if (student) {
+  <mat-card>
+    <img [src]="student.avatar" />
+
+    <h2>{{ student.name }}</h2>
+
+    <p>{{ student.email }}</p>
+
+    <p>{{ student.courseId }}</p>
+
+    <p>{{ student.createAt }}</p>
+
+    <button mat-raised-button routerLink="/studentslist">Volver</button>
+  </mat-card>
+}

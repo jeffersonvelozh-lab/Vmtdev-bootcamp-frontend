@@ -2,25 +2,17 @@
   <mat-spinner></mat-spinner>
 }
 
-@if (errorMessage) {
-  <div>
-    {{ errorMessage }}
-  </div>
-}
 <div class="container">
-  @for (estudiante of student; track estudiante.id) {
+  @for (estudiante of Student; track estudiante.id) {
     <mat-card class="student-card" appearance="outlined">
-      <mat-card-header>
-        <mat-card-title class="id">{{ estudiante.id }}</mat-card-title>
-        <mat-card-subtitle class="nombre">{{ estudiante.name }}</mat-card-subtitle>
+      <mat-card-header class="header-card">
+        <mat-card-title class="nombre">{{ estudiante.name }}</mat-card-title>
+        <mat-card-subtitle class="email"> {{ estudiante.email }} </mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image [src]="estudiante.avatar" alt="Avatar" />
-      <mat-card-content>
-        <p>Email: {{ estudiante.email }}</p>
-        <p>Cursoid: {{ estudiante.courseId }}</p>
-      </mat-card-content>
+      <mat-card-content> </mat-card-content>
       <mat-card-actions>
-        <button matButton>ver</button>
+        <button mat-raised-button color="primary" routerLink="students/id">ver detalle</button>
       </mat-card-actions>
     </mat-card>
   }

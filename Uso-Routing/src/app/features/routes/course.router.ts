@@ -3,7 +3,7 @@ import { Coursesdetails } from "../pages/coursesdetails/coursesdetails";
 import { Courseslist } from "../pages/courseslist/courseslist";
 
 
-export const routes: Routes = [
+export const course_routes: Routes = [
   {path: 'coursedetail', component:Coursesdetails },
   {path: '**', component: Courseslist},
 ];

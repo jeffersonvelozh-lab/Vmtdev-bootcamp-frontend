@@ -1,1 +1,22 @@
-<p>courseslist works!</p>
+@if (errorMessage) {
+  <div>
+    {{ errorMessage }}
+  </div>
+}
+<div class="container">
+  @for (curso of courses; track curso.id) {
+    <mat-card class="course-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title class="id">{{ curso.id }}</mat-card-title>
+        <mat-card-subtitle class="nombre">{{ curso.name }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Instructor: {{ curso.instructor }}</p>
+        <p>Descripción: {{ curso.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" routerLink="coursedetail">ver detalle</button>
+      </mat-card-actions>
+    </mat-card>
+  }
+</div>

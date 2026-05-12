@@ -3,7 +3,7 @@ import { Studentslist } from "../pages/studentslist/studentslist";
 import { Routes } from "@angular/router";
 
 
-export const routes: Routes = [
-  {path: 'studendetails', component: Studentsdetails},
+export const student_routes: Routes = [
+  {path: 'studentsdetails', component: Studentsdetails},
   {path: '**', component: Studentslist}
 ];
