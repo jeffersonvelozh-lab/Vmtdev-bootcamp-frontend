@@ -4,6 +4,6 @@ import { Routes } from "@angular/router";
 
 
 export const student_routes: Routes = [
-  {path: 'studentsdetails', component: Studentsdetails},
+  {path: ':id', component: Studentsdetails},
   {path: '**', component: Studentslist}
 ];

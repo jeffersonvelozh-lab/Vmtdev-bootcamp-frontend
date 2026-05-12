@@ -4,6 +4,6 @@ import { Courseslist } from "../pages/courseslist/courseslist";
 
 
 export const course_routes: Routes = [
-  {path: 'coursedetail', component:Coursesdetails },
+  {path: ':id', component: Coursesdetails },
   {path: '**', component: Courseslist},
 ];

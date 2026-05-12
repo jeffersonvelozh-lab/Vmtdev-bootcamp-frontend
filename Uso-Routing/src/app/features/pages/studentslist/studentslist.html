@@ -12,7 +12,7 @@
       <img mat-card-image [src]="estudiante.avatar" alt="Avatar" />
       <mat-card-content> </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary" routerLink="students/id">ver detalle</button>
+        <button mat-raised-button color="primary" [routerLink]="['/students/id', estudiante.id]">ver detalle</button>
       </mat-card-actions>
     </mat-card>
   }
