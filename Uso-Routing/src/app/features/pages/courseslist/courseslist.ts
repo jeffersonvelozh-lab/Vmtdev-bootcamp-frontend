@@ -19,7 +19,7 @@ export class Courseslist implements OnInit {
 
   courses: course[] = [];
   errorMessage: string = '';
-  loading: boolean = true;
+  loading: boolean = false;
 
   constructor(private courseService: CourseService ) {}
 

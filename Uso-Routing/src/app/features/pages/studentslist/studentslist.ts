@@ -18,13 +18,13 @@ export class Studentslist implements OnInit {
 
   Student: student[] = [];
   errorMessage: string = '';
-  loading: boolean = true;
+  loading: boolean = false;
 
   constructor(private studentService: StudentService) {}
 
   ngOnInit(): void {
     this.studentService.getStudents().subscribe({
-      next: (data: student[]) => {this.Student = data, this.loading = false},
+      next: (data: student[]) => this.Student = data,
       error: () => this.errorMessage = 'Error al cargar los estudiantes'
     });
   }
