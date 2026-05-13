@@ -1,3 +1,13 @@
+@if (loading) {
+  <mat-spinner></mat-spinner>
+}
+
+@if (errorMessage) {
+  <div>
+    {{ errorMessage }}
+  </div>
+}
+
 @if (student) {
   <mat-card>
     <img [src]="student.avatar" />

@@ -1,4 +1,4 @@
-@if (loading) {
+@if (loading()) {
   <mat-spinner></mat-spinner>
 }
 
@@ -8,12 +8,12 @@
   </div>
 }
 
-<button matButton="elevated" class="button-crear" routerLink="/students/create">
-  Crear Estudiante
+<button matButton="elevated" class="button-crear" (click)="abrirFormulario()">
+  Nuevo Estudiante
 </button>
 
 <div class="container">
-  @for (estudiante of Student; track estudiante.id) {
+  @for (estudiante of students(); track estudiante.id) {
     <mat-card class="student-card" appearance="outlined">
       <mat-card-content>
         <img mat-card-image class="imagen" [src]="estudiante.avatar" alt="Avatar" />
@@ -21,10 +21,10 @@
         <p class="email">{{ estudiante.email }}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-icon-button routerLink="(['/students/', estudiante.id])">
+        <button mat-icon-button (click)="goToStudentDetails(estudiante.id)">
           <mat-icon aria-hidden="false" aria-label="icon-visible">visibility</mat-icon>
         </button>
-        <button mat-icon-button routerLink="(['/students/', estudiante.id, 'edit'])">
+        <button mat-icon-button (click)="abrirFormulario(estudiante)">
           <mat-icon aria-hidden="false" aria-label="icon-edit">edit</mat-icon>
         </button>
         <button mat-icon-button routerLink="(['/students/', estudiante.id, 'delete'])">
