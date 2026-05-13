@@ -6,10 +6,13 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterLink } from "@angular/router";
+import { MatIconModule } from '@angular/material/icon';
+import { enviroment } from '../../../../environments/enviroment';
+import { Dialog } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-studentslist',
-  imports: [MatButtonModule, MatCardModule, MatDividerModule, MatProgressSpinnerModule, RouterLink],
+  imports: [MatButtonModule, MatCardModule, MatDividerModule, MatProgressSpinnerModule, MatIconModule, RouterLink],
   templateUrl: './studentslist.html',
   styleUrl: './studentslist.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -28,6 +31,4 @@ export class Studentslist implements OnInit {
       error: () => this.errorMessage = 'Error al cargar los estudiantes'
     });
   }
-
-
 }

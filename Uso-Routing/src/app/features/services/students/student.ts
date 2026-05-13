@@ -20,4 +20,16 @@ export class StudentService {
     return this.http.get<student>(`${this.apiUrl}/${id}`);
   }
 
+  crearStudent(student: Partial<student>): Observable<student> {
+    return this.http.post<student>(`${this.apiUrl}`, student);
+  }
+
+  actualizacionStudent(id: string, student: Partial<student>): Observable<student> {
+    return this.http.put<student>(`${this.apiUrl}/${id}`, student);
+  }
+
+  eliminarStudent(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/students/${id}`);
+  }
+
 }

@@ -2,14 +2,24 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: auto;
 }
 
 .student-card {
-  max-width: 250px;
+  max-width: 500px;
+  max-height: relative;
   margin: 10px;
 }
 
-.header-image {
+.imagen {
   background-size: cover;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.button-crear {
+  margin: 20px;
 }

@@ -2,18 +2,33 @@
   <mat-spinner></mat-spinner>
 }
 
+@if (errorMessage) {
+  <div>
+    {{ errorMessage }}
+  </div>
+}
+
+<button matButton="elevated" class="button-crear" routerLink="/students/create">
+  Crear Estudiante
+</button>
+
 <div class="container">
   @for (estudiante of Student; track estudiante.id) {
     <mat-card class="student-card" appearance="outlined">
-      <mat-card-header class="header-card">
-        <mat-card-title class="nombre">{{ estudiante.name }}</mat-card-title>
-        <mat-card-subtitle class="email"> {{ estudiante.email }} </mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image [src]="estudiante.avatar" alt="Avatar" />
-      <mat-card-content> </mat-card-content>
+      <mat-card-content>
+        <img mat-card-image class="imagen" [src]="estudiante.avatar" alt="Avatar" />
+        <p class="nombre">{{ estudiante.name }}</p>
+        <p class="email">{{ estudiante.email }}</p>
+      </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary" [routerLink]="['/students/id', estudiante.id]">
-          ver detalle
+        <button mat-icon-button routerLink="(['/students/', estudiante.id])">
+          <mat-icon aria-hidden="false" aria-label="icon-visible">visibility</mat-icon>
+        </button>
+        <button mat-icon-button routerLink="(['/students/', estudiante.id, 'edit'])">
+          <mat-icon aria-hidden="false" aria-label="icon-edit">edit</mat-icon>
+        </button>
+        <button mat-icon-button routerLink="(['/students/', estudiante.id, 'delete'])">
+          <mat-icon aria-hidden="false" aria-label="icon-delete">delete</mat-icon>
         </button>
       </mat-card-actions>
     </mat-card>

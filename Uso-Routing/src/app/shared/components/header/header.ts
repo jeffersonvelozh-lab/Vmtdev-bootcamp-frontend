@@ -5,7 +5,7 @@ import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, MatButtonModule, MatDividerModule, RouterLinkActive],
+  imports: [MatButtonModule, MatDividerModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
