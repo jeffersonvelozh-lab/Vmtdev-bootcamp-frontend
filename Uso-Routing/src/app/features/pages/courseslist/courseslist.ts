@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, signal, Signal } from '@angular/core';
 import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -17,15 +17,15 @@ import { RouterLink } from '@angular/router';
 
 export class Courseslist implements OnInit {
 
-  courses: course[] = [];
+  courses = signal<course[]>([]);
+  loading = signal<boolean>(false);
   errorMessage: string = '';
-  loading: boolean = false;
 
   constructor(private courseService: CourseService ) {}
 
   ngOnInit(): void {
     this.courseService.getCourses().subscribe({
-      next: (data: course[]) => this.courses = data,
+      next: (data: course[]) => this.courses.set(data),
       error: () => this.errorMessage = 'Error al caragar cursos'
     });
   }

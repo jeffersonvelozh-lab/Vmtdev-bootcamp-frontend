@@ -1,4 +1,4 @@
-@if (loading) {
+@if (loading()) {
   <mat-spinner></mat-spinner>
 }
 
@@ -8,7 +8,7 @@
   </div>
 }
 <div class="container">
-  @for (curso of courses; track curso.id) {
+  @for (curso of courses(); track curso.id) {
     <mat-card class="course-card" appearance="outlined">
       <mat-card-header>
         <mat-card-title class="id">{{ curso.id }}</mat-card-title>

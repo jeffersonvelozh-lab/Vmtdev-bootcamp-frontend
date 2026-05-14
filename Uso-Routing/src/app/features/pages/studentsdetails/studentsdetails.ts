@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { student } from '../../interfaces/Student';
 import { StudentService } from '../../services/students/student';
 import { ActivatedRoute } from '@angular/router';
@@ -12,7 +12,8 @@ import { MatProgressSpinner } from '@angular/material/progress-spinner';
   styleUrl: './studentsdetails.scss',
 })
 export class Studentsdetails implements OnInit {
-  student?: student;
+
+  student = signal<student | undefined>(undefined);
   errorMessage: string = '';
   loading: boolean = false;
 
@@ -24,7 +25,7 @@ export class Studentsdetails implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if(id){
       this.studentService.getById(id).subscribe({
-        next: (data) => this.student = data,
+        next: (data) => this.student.set(data),
         error: () => this.errorMessage = 'Error al cargar el empleado'
       });
     }

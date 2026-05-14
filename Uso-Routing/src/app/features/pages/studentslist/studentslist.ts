@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { DialogformStudents } from '../dialogform-students/dialogform-students';
+import { FormstemplateStudents } from '../formstemplate-students/formstemplate-students';
 
 @Component({
   selector: 'app-studentslist',
@@ -64,7 +65,7 @@ export class Studentslist implements OnInit {
 
   abrirFormulario(student?: student): void {
 
-    const dialogRef = this.dialog.open(DialogformStudents, {
+    const dialogRef = this.dialog.open(FormstemplateStudents, {
       width: '400px',
       data: student
     });
