@@ -1,7 +1,7 @@
 <mat-dialog-content>
   <h2 mat-dialog-title>Crear Estudiante</h2>
   <mat-dialog-content>
-    <form class="crearstudent-form">
+    <form class="crearstudent-form" formGroup="studentForm" (ngSubmit)="guardar()">
       <mat-form-field appearance="outline" style="width: 100%">
         <mat-label>Nombre</mat-label>
         <input matInput formControlName="name" placeholder="nombre" />
@@ -38,6 +38,8 @@
 
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close (click)="cerrar()">Cancelar</button>
-    <button mat-button color="primary" mat-dialog-close (click)="guardar()">Guardar</button>
+    <button mat-button color="primary" mat-dialog-close type="submit" (click)="guardar()">
+      Guardar
+    </button>
   </mat-dialog-actions>
 </mat-dialog-content>
