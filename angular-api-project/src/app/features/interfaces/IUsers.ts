@@ -36,3 +36,34 @@ export interface crypto {
   wallet: string;
   network: string;
 }
+
+export interface IUsers {
+  id: number;
+  firstName: string;
+  lastName: string;
+  maidenName: string;
+  age: number;
+  gender: string;
+  email: string;
+  phone: string;
+  username: string;
+  password: string;
+  birthDate: string;
+  image: string;
+  bloodGroup: string;
+  height: number;
+  weight: number;
+  eyeColor: string;
+  hair: hair;
+  ip: string;
+  address: address;
+  macAddress: string;
+  university: string;
+  bank: bank;
+  company: company;
+  ein: string;
+  ssn: string;
+  userAgent: string;
+  crypto: crypto;
+  role: string;
+}

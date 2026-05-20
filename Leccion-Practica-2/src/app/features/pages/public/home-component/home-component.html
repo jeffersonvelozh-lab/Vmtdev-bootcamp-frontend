@@ -1,0 +1,23 @@
+@if (loading()) {
+  <div>Cargando...</div>
+}
+
+@if (errorMessage()) {
+  <div>{{ errorMessage() }}</div>
+}
+
+@if (!loading() && !errorMessage()) {
+  <h2>Lista de productos</h2>
+
+  <div class="card">
+    @for (product of products(); track product.id) {
+      <div class="grid">
+        <h3>{{ product.id }}</h3>
+        <img [src]="product.image" width="100" />
+        <p>Name: {{ product.title }}</p>
+        <p>Description: {{ product.description }}</p>
+        <p>Price: {{ product.price }}</p>
+      </div>
+    }
+  </div>
+}
