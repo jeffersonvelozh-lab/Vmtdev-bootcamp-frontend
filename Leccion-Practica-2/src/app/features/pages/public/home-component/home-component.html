@@ -1,23 +1,60 @@
-@if (loading()) {
-  <div>Cargando...</div>
-}
+<div class="home-container">
+  <section class="banner">
+    <div class="banner-content">
+      <h1>Bienvenido a NovaMarket</h1>
+      <p>Descubre los mejores productos tecnológicos al mejor precio.</p>
+      <button mat-raised-button color="accent">Ver Productos</button>
+    </div>
+  </section>
 
-@if (errorMessage()) {
-  <div>{{ errorMessage() }}</div>
-}
+  <section class="featured-products">
+    <h2>Productos Destacados</h2>
+    <div class="products-grid">
+      @for (product of featuredProducts; track product.id) {
+        <mat-card class="product-card">
+          <img mat-card-image [src]="product.image" [alt]="product.name" width="100px" />
+          <mat-card-content>
+            <h3>{{ product.name }}</h3>
 
-@if (!loading() && !errorMessage()) {
-  <h2>Lista de productos</h2>
+            <p>{{ product.description }}</p>
 
-  <div class="card">
-    @for (product of products(); track product.id) {
-      <div class="grid">
-        <h3>{{ product.id }}</h3>
-        <img [src]="product.image" width="100" />
-        <p>Name: {{ product.title }}</p>
-        <p>Description: {{ product.description }}</p>
-        <p>Price: {{ product.price }}</p>
-      </div>
-    }
-  </div>
-}
+            <span class="price"> ${{ product.price }} </span>
+          </mat-card-content>
+
+          <mat-card-actions>
+            <button mat-raised-button color="primary">Comprar</button>
+          </mat-card-actions>
+        </mat-card>
+      }
+    </div>
+  </section>
+
+  <section class="promotions">
+    <h2>Promociones</h2>
+
+    <div class="promotion-grid">
+      <mat-card class="promo-card">
+        <mat-card-content>
+          <h3>50% OFF</h3>
+
+          <p>En accesorios seleccionados.</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="promo-card">
+        <mat-card-content>
+          <h3>Envío Gratis</h3>
+
+          <p>En compras mayores a $100.</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="promo-card">
+        <mat-card-content>
+          <h3>2x1</h3>
+          <p>En productos gaming.</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+</div>

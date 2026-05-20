@@ -6,7 +6,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-header-component',
   standalone: true,
-  imports: [MatIconModule, MatToolbarModule, MatTooltipModule],
+  imports: [MatIconModule, MatToolbarModule],
   templateUrl: './header-component.html',
   styleUrls: ['./header-component.scss'],
 })

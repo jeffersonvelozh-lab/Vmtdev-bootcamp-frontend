@@ -11,5 +11,9 @@ export interface IProduct {
   price: number;
   title: string;
   description: string;
-  thumbail: string;
+  thumbnail: string;
+}
+
+export interface IProductResponse {
+  products: IProduct[];
 }

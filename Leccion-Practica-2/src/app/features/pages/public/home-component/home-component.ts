@@ -1,6 +1,4 @@
-import { Component, inject, Inject, OnInit, signal } from '@angular/core';
-import { IProduct } from '../../../interfaces/public/Product';
-import { HomeService } from '../../../services/home.service';
+import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -20,27 +18,30 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home-component.html',
   styleUrls: ['./home-component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  products = signal<IProduct[]>([]);
-  loading = signal(false);
-  errorMessage = signal('');
-  searchQuery = '';
-
-  homeService = inject(HomeService);
-
-  ngOnInit(): void {
-    this.homeService.getProducts().subscribe({
-      next: (data: IProduct[]) => {
-        console.log(data);
-        this.products.set(data);
-        this.loading.set(false);
-      },
-      error: (error) => {
-        this.errorMessage.set('Error al cargar los productos');
-        this.loading.set(false);
-      }
-    });
+  featuredProducts = [
+  {
+    id: 1,
+    name: 'Laptop Gamer',
+    description: 'Potencia extrema para gaming.',
+    price: 1200,
+    image: 'https://picsum.photos/400/250?random=1'
+  },
+  {
+    id: 2,
+    name: 'Auriculares RGB',
+    description: 'Sonido envolvente profesional.',
+    price: 150,
+    image: 'https://picsum.photos/400/250?random=2'
+  },
+  {
+    id: 3,
+    name: 'Mouse Gamer',
+    description: 'Precisión y velocidad.',
+    price: 80,
+    image: 'https://picsum.photos/400/250?random=3'
   }
+];
 
 }

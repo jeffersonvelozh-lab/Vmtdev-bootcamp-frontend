@@ -1,10 +1,10 @@
-<div class="app-layout">
-  <app-navbar-component />
-  <div class="main-wrapper">
-    <app-header-component />
+<div class="layout">
+  <app-header-component></app-header-component>
+  <div class="wrapper">
+    <app-navbar-component></app-navbar-component>
     <main class="content-area">
       <router-outlet />
     </main>
-    <app-footer-component />
   </div>
+  <app-footer-component></app-footer-component>
 </div>

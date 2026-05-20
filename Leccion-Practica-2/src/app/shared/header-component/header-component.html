@@ -1,13 +1,18 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="header">
+  <div class="logo-container">
+    <img
+      src="https://img.freepik.com/vector-premium/plantilla-logotipo-degradado-tienda-tecnologia_269830-349.jpg"
+      alt="Logo empresa"
+      class="logo"
+    />
+
+    <span class="system-name"> NovaMarket </span>
+  </div>
+
   <span class="spacer"></span>
 
-  <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="https://twitter.com" target="_blank" aria-label="Twitter/X">
-    <i class="fab fa-x-twitter"></i>
-  </a>
+  <button mat-raised-button color="accent">
+    <mat-icon>login</mat-icon>
+    Iniciar sesión
+  </button>
 </mat-toolbar>
