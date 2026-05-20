@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 
 @Component({
@@ -14,11 +15,17 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [MatButtonModule, MatCardModule, MatDividerModule,
     MatProgressSpinnerModule, MatIconModule,
-    FormsModule, MatDialogModule, CommonModule],
+    FormsModule, MatDialogModule, CommonModule, RouterLink],
   templateUrl: './home-component.html',
   styleUrls: ['./home-component.scss'],
 })
 export class HomeComponent {
+  loading = signal('');
+  private router = inject(Router);
+
+goToProducts(): void {
+  this.router.navigate(['/products']);
+}
 
   featuredProducts = [
   {

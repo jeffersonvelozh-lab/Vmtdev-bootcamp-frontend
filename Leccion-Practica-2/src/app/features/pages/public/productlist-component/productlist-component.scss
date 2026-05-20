@@ -1,0 +1,18 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 10px;
+}
+
+mat-card {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-image{
+  width: 200px;
+  display: center;
+}

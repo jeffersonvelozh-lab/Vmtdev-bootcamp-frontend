@@ -6,7 +6,7 @@ import { IProductResponse } from "../interfaces/public/Product";
 
 @Injectable({providedIn: 'root'
 })
-export class HomeService {
+export class ProductService {
   private url = environment.apiUrl;
   private http = inject(HttpClient);
 

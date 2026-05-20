@@ -1,9 +1,15 @@
 <div class="home-container">
+  @if (loading()) {
+    <div class="center">
+      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </div>
+  }
+
   <section class="banner">
     <div class="banner-content">
       <h1>Bienvenido a NovaMarket</h1>
       <p>Descubre los mejores productos tecnológicos al mejor precio.</p>
-      <button mat-raised-button color="accent">Ver Productos</button>
+      <button mat-raised-button color="accent" routerLink="/products">Ver Productos</button>
     </div>
   </section>
 
@@ -20,10 +26,6 @@
 
             <span class="price"> ${{ product.price }} </span>
           </mat-card-content>
-
-          <mat-card-actions>
-            <button mat-raised-button color="primary">Comprar</button>
-          </mat-card-actions>
         </mat-card>
       }
     </div>
