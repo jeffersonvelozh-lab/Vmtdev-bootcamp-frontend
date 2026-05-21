@@ -39,7 +39,12 @@ export const routes: Routes = [
                 path: 'dashboard',
                 loadComponent: () =>
                     import('./features/pages/privated/dashboard-component/dashboard-component').then((m) => m.DashboardComponent),
-            }
+            },
+            {
+                path: 'products',
+                loadComponent: () =>
+                    import('./features/pages/privated/Product-component/productlist-component/productlist-component').then((m) => m.ProductlistComponent),
+            },
         ]
   }
 

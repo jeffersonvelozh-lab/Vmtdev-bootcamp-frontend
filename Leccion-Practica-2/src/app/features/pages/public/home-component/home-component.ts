@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { IProduct } from '../../../interfaces/public/Product';
+import { ProductService } from '../../../services/product.service';
 
 
 @Component({
@@ -15,17 +17,15 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   imports: [MatButtonModule, MatCardModule, MatDividerModule,
     MatProgressSpinnerModule, MatIconModule,
-    FormsModule, MatDialogModule, CommonModule, RouterLink],
+    FormsModule, MatDialogModule, CommonModule, MatDividerModule],
   templateUrl: './home-component.html',
   styleUrls: ['./home-component.scss'],
 })
 export class HomeComponent {
-  loading = signal('');
-  private router = inject(Router);
+  products = signal<IProduct[]>([]);
+  errorMessage = signal('');
+  loading = signal(false);
 
-goToProducts(): void {
-  this.router.navigate(['/products']);
-}
 
   featuredProducts = [
   {
@@ -44,6 +44,27 @@ goToProducts(): void {
   },
   {
     id: 3,
+    name: 'Mouse Gamer',
+    description: 'Precisión y velocidad.',
+    price: 80,
+    image: 'https://picsum.photos/400/250?random=3'
+  },
+  {
+    id: 4,
+    name: 'Mouse Gamer',
+    description: 'Precisión y velocidad.',
+    price: 80,
+    image: 'https://picsum.photos/400/250?random=3'
+  },
+  {
+    id: 5,
+    name: 'Mouse Gamer',
+    description: 'Precisión y velocidad.',
+    price: 80,
+    image: 'https://picsum.photos/400/250?random=3'
+  },
+  {
+    id: 6,
     name: 'Mouse Gamer',
     description: 'Precisión y velocidad.',
     price: 80,
