@@ -1,10 +1,15 @@
 <div class="layout">
-  <app-header-component></app-header-component>
-  <div class="wrapper">
-    <app-navbar-component></app-navbar-component>
-    <main class="content-area">
-      <router-outlet />
-    </main>
-  </div>
-  <app-footer-component></app-footer-component>
+  @if (!authService.isAuthenticated()) {
+    <mat-divider></mat-divider>
+    <app-header-component></app-header-component>
+    <div class="wrapper">
+      <app-navbar-component></app-navbar-component>
+    </div>
+  }
+  <main class="content-area">
+    <router-outlet />
+  </main>
+  @if (!authService.isAuthenticated()) {
+    <app-footer-component></app-footer-component>
+  }
 </div>

@@ -65,4 +65,8 @@ export class AuthService {
         }
     }
 
+  isAuthenticate(): boolean {
+  return !!localStorage.getItem('token');
+}
+
 }
