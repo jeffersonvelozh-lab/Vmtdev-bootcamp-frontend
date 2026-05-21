@@ -11,4 +11,5 @@ export interface JwtPayload {
     sub: number;
     user: string;
     iat: number;
+    exp?: number;
 }

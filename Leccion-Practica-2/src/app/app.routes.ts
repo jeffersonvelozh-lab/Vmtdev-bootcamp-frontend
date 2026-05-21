@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
+import { publicGuard } from './core/guards/public.guard';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -20,7 +21,7 @@ export const routes: Routes = [
     import('./routes/contact.route').then(m => m.contactRoute)
   },
 
-  {path: 'login', loadChildren: () =>
+  {path: 'login', canActivate: [publicGuard], loadChildren: () =>
     import('./routes/login.route').then(m => m.loginRoute)
   },
 

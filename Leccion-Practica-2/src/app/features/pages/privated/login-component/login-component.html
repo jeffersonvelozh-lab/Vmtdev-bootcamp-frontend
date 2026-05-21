@@ -3,11 +3,11 @@
     <div class="login-header">
       <h1>Iniciar Sesión</h1>
 
-      <p>Bienvenido de nuevo 👋</p>
+      <p>Bienvenido de nuevo</p>
     </div>
 
     <mat-card-content>
-      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="(onSubmit)">
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="outline">
           <mat-label>Correo electrónico</mat-label>
 
@@ -24,8 +24,8 @@
           <mat-icon matSuffix> lock </mat-icon>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" class="login-button" type="submit">
-          Ingresar
+        <button mat-flat-button color="primary" class="login-button" type="submit">
+          <span class="btn-content"> <mat-icon>login</mat-icon> Ingresar </span>
         </button>
       </form>
     </mat-card-content>

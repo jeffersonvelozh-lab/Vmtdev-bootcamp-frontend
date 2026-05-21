@@ -68,3 +68,9 @@
 .login-actions a:hover {
   text-decoration: underline;
 }
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}

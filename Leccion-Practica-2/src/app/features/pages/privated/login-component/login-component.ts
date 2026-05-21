@@ -27,8 +27,8 @@ export class LoginComponent {
   showPass = signal(false)
 
   loginForm = this.fb.group({
-    email: ['', Validators.required],
-    password: ['', Validators.required]
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
   onSubmit() {
@@ -42,16 +42,17 @@ export class LoginComponent {
 
     const { email, password } = this.loginForm.value;
 
-      this.authService.login({ email: email!, password: password! }).subscribe({
-        next: () => {
-            this.snackBar.open('¡Bienvenido!', 'Cerrar', { duration: 3000 });
-            this.router.navigate(['/admin/dashboard']);
-          },
-          error: () => {
-            this.loading.set(false);
-            this.error.set('Usuario o contraseña incorrectos.');
-          },
-      });
+    this.authService.login({ email: email!, password: password! }).subscribe({
+      next: () => {
+        this.loading.set(false);
+        this.snackBar.open('¡Bienvenido!', 'Cerrar', { duration: 3000 });
+        this.router.navigate(['/admin/dashboard']);
+      },
+      error: () => {
+        this.loading.set(false);
+        this.error.set('Usuario o contraseña incorrectos.');
+      },
+    });
   }
 
 }

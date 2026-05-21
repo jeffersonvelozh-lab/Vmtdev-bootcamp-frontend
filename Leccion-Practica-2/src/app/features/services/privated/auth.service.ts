@@ -51,7 +51,15 @@ export class AuthService {
         try {
             const payload = token.split('.')[1];
             const decoded = atob(payload.replace(/-/g, '+').replace(/_/g, '/'));
-            return JSON.parse(decoded) as JwtPayload;
+            const parsed = JSON.parse(decoded) as JwtPayload;
+
+            if (parsed.exp && parsed.exp * 1000 < Date.now()) {
+                localStorage.removeItem(this.TOKEN_KEY);
+                this._token.set(null);
+                return null;
+            }
+
+            return parsed;
         } catch {
             return null;
         }

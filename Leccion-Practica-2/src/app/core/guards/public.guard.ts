@@ -2,13 +2,13 @@ import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../../features/services/privated/auth.service';
 
-export const authGuard: CanActivateFn = () => {
+export const publicGuard: CanActivateFn = () => {
     const authService = inject(AuthService);
     const router = inject(Router);
 
     if (authService.isAuthenticated()) {
-        return true;
+        return router.createUrlTree(['/admin/dashboard']);
     }
 
-    return router.createUrlTree(['/login']);
+    return true;
 };
