@@ -1,0 +1,70 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-image {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 1rem;
+}
+
+.login-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.login-header p {
+  margin-top: 0.5rem;
+  color: gray;
+}
+
+/* Formulario */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-button {
+  height: 48px;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Actions */
+
+.login-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.login-actions a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.login-actions a:hover {
+  text-decoration: underline;
+}

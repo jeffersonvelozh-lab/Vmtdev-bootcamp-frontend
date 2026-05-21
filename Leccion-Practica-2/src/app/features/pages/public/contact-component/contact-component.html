@@ -1,0 +1,90 @@
+<div class="contact-container">
+  <!-- Hero -->
+  <section class="contact-hero">
+    <div class="hero-content">
+      <h1>Contáctanos</h1>
+
+      <p>
+        Estamos aquí para ayudarte. Ponte en contacto con nosotros y resolveremos tus dudas lo más
+        pronto posible.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenido -->
+  <section class="contact-content">
+    <!-- Formulario -->
+    <mat-card class="contact-form-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar> mail </mat-icon>
+
+        <mat-card-title> Envíanos un mensaje </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <form class="contact-form">
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+
+            <input matInput placeholder="Ingresa tu nombre" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Correo electrónico</mat-label>
+
+            <input matInput type="email" placeholder="correo@example.com" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Asunto</mat-label>
+
+            <input matInput placeholder="Asunto del mensaje" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Mensaje</mat-label>
+
+            <textarea matInput rows="6" placeholder="Escribe tu mensaje..."></textarea>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary">Enviar mensaje</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Información -->
+    <mat-card class="contact-info-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar> contact_phone </mat-icon>
+
+        <mat-card-title> Información de contacto </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="info-item">
+          <mat-icon>location_on</mat-icon>
+
+          <span> Guayaquil, Ecuador </span>
+        </div>
+
+        <div class="info-item">
+          <mat-icon>phone</mat-icon>
+
+          <span> +593 999 999 999 </span>
+        </div>
+
+        <div class="info-item">
+          <mat-icon>email</mat-icon>
+
+          <span> contacto@novamarket.com </span>
+        </div>
+
+        <div class="info-item">
+          <mat-icon>schedule</mat-icon>
+
+          <span> Lunes - Sabados | 08:00 AM - 06:00 PM </span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>
