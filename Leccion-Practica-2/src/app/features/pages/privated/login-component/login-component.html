@@ -7,7 +7,7 @@
     </div>
 
     <mat-card-content>
-      <form class="login-form">
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="(onSubmit)">
         <mat-form-field appearance="outline">
           <mat-label>Correo electrónico</mat-label>
 
@@ -24,7 +24,9 @@
           <mat-icon matSuffix> lock </mat-icon>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" class="login-button">Ingresar</button>
+        <button mat-raised-button color="primary" class="login-button" type="submit">
+          Ingresar
+        </button>
       </form>
     </mat-card-content>
   </mat-card>
