@@ -27,7 +27,7 @@ export class LoginComponent {
   showPass = signal(false)
 
   loginForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
+    username: ['', [Validators.required, Validators.minLength(3)]],
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
@@ -40,9 +40,9 @@ export class LoginComponent {
     this.loading.set(true);
     this.error.set('');
 
-    const { email, password } = this.loginForm.value;
+    const { username, password } = this.loginForm.value;
 
-    this.authService.login({ email: email!, password: password! }).subscribe({
+    this.authService.login({ username: username!, password: password! }).subscribe({
       next: () => {
         this.loading.set(false);
         this.snackBar.open('¡Bienvenido!', 'Cerrar', { duration: 3000 });
