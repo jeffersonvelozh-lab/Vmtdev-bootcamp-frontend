@@ -21,7 +21,6 @@ export class DashboardComponent {
 
   stats: StatCard[] = [
     { icon: 'shopping_bag', label: 'Productos', value: '30', color: '#1976d2' },
-    { icon: 'people', label: 'Usuarios', value: '2', color: '#388e3c' },
     { icon: 'receipt_long', label: 'Órdenes', value: '7', color: '#f57c00' },
     { icon: 'attach_money', label: 'Ventas del mes', value: '$1,240', color: '#7b1fa2' },
   ];
