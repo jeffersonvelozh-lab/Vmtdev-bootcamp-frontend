@@ -4,10 +4,13 @@ import { ProductService } from '../../../../services/product.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
+import { ProductformComponent } from '../../productform-component/productform-component';
 
 @Component({
   selector: 'app-productlist-component',
-  imports: [MatCardModule, MatButtonModule, MatProgressSpinnerModule],
+  imports: [MatCardModule, MatButtonModule, MatProgressSpinnerModule, MatCardModule, MatIconModule],
   templateUrl: './productlist-component.html',
   styleUrl: './productlist-component.scss',
 })
@@ -18,6 +21,7 @@ export class ProductlistComponent {
   searchQuery = signal('');
 
   homeService = inject(ProductService);
+  constructor(private dialogRef: MatDialog) {}
 
   ngOnInit(): void {
     this.cargarProductos();
@@ -35,5 +39,19 @@ export class ProductlistComponent {
         this.loading.set(false);
       }
     });
+  }
+
+  abrirFormulario(product: IProduct | null = null){
+    const dialogRef = this.dialogRef.open(ProductformComponent, {
+      width: '480px',
+      data: product
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.cargarProductos();
+      }
+    });
+
   }
 }

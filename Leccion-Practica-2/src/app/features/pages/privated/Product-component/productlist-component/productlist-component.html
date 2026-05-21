@@ -3,6 +3,12 @@
     <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
   </div>
 }
+<div class="header">
+  <button mat-fab extended color="primary" (click)="abrirFormulario()">
+    <mat-icon>add</mat-icon>
+    Nuevo producto
+  </button>
+</div>
 
 @if (errorMessage()) {
   <div>{{ errorMessage() }}</div>
@@ -14,7 +20,6 @@
       <mat-card appearance="outlined">
         <mat-card-header>
           <mat-card-title>{{ producto.title }}</mat-card-title>
-          <mat-card-subtitle>{{ producto.brand }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <p>
@@ -25,10 +30,28 @@
             {{ producto.category }}
           </p>
           <p>
+            <strong>Stock:</strong>
+            {{ producto.stock }}
+          </p>
+          <p>
             <strong>Precio:</strong>
             ${{ producto.price }}
           </p>
+          <p>
+            <strong>Descripción:</strong>
+            {{ producto.description }}
+          </p>
         </mat-card-content>
+
+        <mat-card-actions class="card-actions">
+          <button mat-icon-button (click)="abrirFormulario(producto)">
+            <mat-icon class="icon-edit">edit</mat-icon>
+          </button>
+
+          <button mat-icon-button>
+            <mat-icon class="icon-delete">delete_forever</mat-icon>
+          </button>
+        </mat-card-actions>
       </mat-card>
     }
   </div>
