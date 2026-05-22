@@ -11,7 +11,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-productlist-component',
-  imports: [MatCardModule, MatButtonModule, MatProgressSpinnerModule, MatCardModule, MatIconModule],
+  imports: [MatCardModule, MatButtonModule, MatProgressSpinnerModule,
+    MatCardModule, MatIconModule],
   templateUrl: './productlist-component.html',
   styleUrl: './productlist-component.scss',
 })

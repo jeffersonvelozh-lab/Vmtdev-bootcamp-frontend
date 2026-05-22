@@ -45,6 +45,11 @@ export const routes: Routes = [
                 loadComponent: () =>
                     import('./features/pages/privated/Product-component/productlist-component/productlist-component').then((m) => m.ProductlistComponent),
             },
+            {
+                path: 'carts',
+                loadComponent: () =>
+                    import('./features/pages/privated/cart-component/cart-component').then((m) => m.CartComponent),
+            },
         ]
   }
 
