@@ -21,7 +21,7 @@ export class ProductlistComponent {
   errorMessage = signal('');
   searchQuery = signal('');
 
-  homeService = inject(ProductService);
+  productService = inject(ProductService);
   constructor(private dialogRef: MatDialog) {}
   private snackBar = inject(MatSnackBar);
 
@@ -31,7 +31,7 @@ export class ProductlistComponent {
 
   cargarProductos() {
     this.loading.set(true);
-    this.homeService.getProducts().subscribe({
+    this.productService.getProducts().subscribe({
       next: (data) => {
         this.products.set(data.products);
         this.loading.set(false);
@@ -58,7 +58,7 @@ export class ProductlistComponent {
 
   delete(product: IProduct) {
         if (!confirm(`¿Eliminar "${product.title}"?`)) return;
-        this.homeService.delete(product.id).subscribe({
+        this.productService.delete(product.id).subscribe({
             next: () => {
                 this.products.update((list) => list.filter((p) => p.id !== product.id));
                 this.snackBar.open('Producto eliminado', 'Cerrar', { duration: 3000 });

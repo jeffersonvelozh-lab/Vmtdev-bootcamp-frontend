@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
-import { ProductlistComponent } from "../features/pages/privated/Product-component/productlist-component/productlist-component";
+import { ProductpublicComponent } from "../features/pages/public/productpublic-component/productpublic-component";
 
 export const productRoute: Routes = [
-  {path: '', component: ProductlistComponent}
+  {path: '', component: ProductpublicComponent}
 ]

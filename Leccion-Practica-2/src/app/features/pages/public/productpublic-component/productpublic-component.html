@@ -1,0 +1,34 @@
+@if (loading()) {
+  <div class="center">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+}
+
+@if (errorMessage()) {
+  <div>{{ errorMessage() }}</div>
+}
+
+@if (!loading() && !errorMessage()) {
+  <div class="grid">
+    @for (producto of products(); track producto.id) {
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title>{{ producto.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            <img [src]="producto.thumbnail" alt="{{ producto.title }}" class="product-image" />
+          </p>
+          <p>
+            <strong>Precio:</strong>
+            ${{ producto.price }}
+          </p>
+          <p>
+            <strong>Categoría:</strong>
+            {{ producto.category }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+}
