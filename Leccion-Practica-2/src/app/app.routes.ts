@@ -38,18 +38,24 @@ export const routes: Routes = [
             {
                 path: 'dashboard',
                 loadComponent: () =>
-                    import('./features/pages/privated/dashboard-component/dashboard-component').then((m) => m.DashboardComponent),
+                  import('./features/pages/privated/dashboard-component/dashboard-component').then((m) => m.DashboardComponent),
             },
             {
                 path: 'products',
                 loadComponent: () =>
-                    import('./features/pages/privated/Product-component/productlist-component/productlist-component').then((m) => m.ProductlistComponent),
+                  import('./features/pages/privated/Product-component/productlist-component/productlist-component').then((m) => m.ProductlistComponent),
             },
             {
                 path: 'carts',
                 loadComponent: () =>
-                    import('./features/pages/privated/cart-component/cart-component').then((m) => m.CartComponent),
+                  import('./features/pages/privated/carts/cart-component/cart-component').then((m) => m.CartComponent),
             },
+            {
+              path: 'id',
+              loadComponent: () =>
+                import('./features/pages/privated/carts/cartdetail-component/cartdetail-component').then((m) => m.CartdetailComponent),
+            }
+
         ]
   }
 

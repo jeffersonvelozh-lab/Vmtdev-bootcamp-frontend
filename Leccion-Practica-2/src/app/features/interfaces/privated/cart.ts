@@ -10,7 +10,7 @@ export interface Product {
 export interface ICart {
   id: number;
   total: number;
-  dicountedTotal: number;
+  discountedTotal: number;
   totalQuantity: number;
   userId: number;
   totalProducts: number;

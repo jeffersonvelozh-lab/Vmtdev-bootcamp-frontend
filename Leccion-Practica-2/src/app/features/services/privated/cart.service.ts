@@ -15,4 +15,21 @@ export class CartService {
     return this.http.get<ICartsResponse>(this.url);
   }
 
+  getById(id: number): Observable<ICartsResponse> {
+      return this.http.get<ICartsResponse>(`${this.url}/${id}`);
+    }
+
+    create(payload: ICart): Observable<ICart> {
+      return this.http.post<ICart>(this.url, payload);
+    }
+
+    update(id: number, payload: ICartsResponse): Observable<ICartsResponse> {
+      return this.http.put<ICartsResponse>(`${this.url}/${id}`, payload);
+    }
+
+    delete(id: number): Observable<ICart> {
+      return this.http.delete<ICart>(`${this.url}/${id}`);
+    }
+
+
 }

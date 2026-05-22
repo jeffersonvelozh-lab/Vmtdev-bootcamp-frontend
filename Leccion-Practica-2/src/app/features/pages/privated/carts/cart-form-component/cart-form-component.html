@@ -1,0 +1,62 @@
+<mat-card appearance="outlined" class="dialog-padding">
+  <mat-card-header class="form-header">
+    <div class="header-container">
+      <div>
+        <mat-card-title class="title"> Agregar carrito </mat-card-title>
+      </div>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="form" class="form" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Productos</mat-label>
+        <input matInput formControlName="products" placeholder="Productos separados por coma" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Total de productos</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="totalProducts"
+          placeholder="Total de productos"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Cantidad total</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="totalQuantity"
+          placeholder="Cantidad total"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Total descontado</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="discountedTotal"
+          placeholder="Total descontado"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Total</mat-label>
+        <input matInput type="number" formControlName="total" placeholder="Total" />
+      </mat-form-field>
+
+      <div class="actions">
+        <button mat-stroked-button type="button" (click)="onCancel()">Cancelar</button>
+
+        <button mat-flat-button color="primary" type="submit" class="submit-btn">
+          <mat-icon>add</mat-icon>
+          <span class="btn-content"> Crear carrito </span>
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

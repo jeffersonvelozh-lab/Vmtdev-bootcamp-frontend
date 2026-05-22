@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
-import { ProductformComponent } from '../../productform-component/productform-component';
+import { ProductformComponent } from '../productform-component/productform-component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({

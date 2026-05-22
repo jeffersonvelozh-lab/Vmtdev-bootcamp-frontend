@@ -1,5 +1,5 @@
 <div class="header">
-  <button mat-fab extended color="primary">
+  <button mat-fab extended color="primary" (click)="abrirFormulario()">
     <mat-icon>add</mat-icon>
     Nuevo carrito
   </button>
@@ -48,7 +48,7 @@
         </mat-card-content>
 
         <mat-card-actions class="card-actions">
-          <button mat-icon-button>
+          <button mat-icon-button (click)="goToCartDetails(carrito.id)" routerLink="/:id">
             <mat-icon class="icon-delete">visibility</mat-icon>
           </button>
 

@@ -6,8 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
-import { ProductService } from '../../../services/product.service';
-import { IProduct, IProductResponse } from '../../../interfaces/public/Product';
+import { ProductService } from '../../../../services/product.service';
+import { IProduct, IProductResponse } from '../../../../interfaces/public/Product';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { validateLocaleAndSetLanguage } from 'typescript';
@@ -26,7 +26,6 @@ import { Title } from '@angular/platform-browser';
 })
 export class ProductformComponent {
 
-  private fb = inject(FormBuilder);
     dialogRef = inject(MatDialogRef<ProductformComponent>);
     data: IProduct = inject(MAT_DIALOG_DATA);
 
