@@ -49,11 +49,13 @@ export const routes: Routes = [
                 path: 'carts',
                 loadComponent: () =>
                   import('./features/pages/privated/carts/cart-component/cart-component').then((m) => m.CartComponent),
-            },
-            {
-              path: ':id',
-              loadComponent: () =>
-                import('./features/pages/privated/carts/cartdetail-component/cartdetail-component').then((m) => m.CartdetailComponent),
+                children: [
+                  {
+                    path: ':id',
+                    loadComponent: () =>
+                      import('./features/pages/privated/carts/cartdetail-component/cartdetail-component').then((m) => m.CartdetailComponent),
+                  }
+                ]
             }
 
         ]

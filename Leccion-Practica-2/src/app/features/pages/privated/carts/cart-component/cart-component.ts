@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-cart-component',
   imports: [MatCardModule, MatButtonModule, MatProgressSpinnerModule,
-    MatCardModule, MatIconModule],
+    MatCardModule, MatIconModule, RouterLink],
   templateUrl: './cart-component.html',
   styleUrl: './cart-component.scss',
 })
@@ -50,7 +50,7 @@ export class CartComponent implements OnInit {
   }
 
   goToCartDetails(id: number): void {
-    this.router.navigate(['/carts', id]);
+    this.router.navigate(['/admin/carts', id]);
   }
 
   abrirFormulario(cart: ICart | null = null){
