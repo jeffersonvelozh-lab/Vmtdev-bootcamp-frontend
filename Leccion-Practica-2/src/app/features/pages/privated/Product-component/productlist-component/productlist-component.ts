@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { IProduct } from '../../../../interfaces/public/Product';
+import { IProduct, IProductResponse } from '../../../../interfaces/public/Product';
 import { ProductService } from '../../../../services/product.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -7,6 +7,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductformComponent } from '../../productform-component/productform-component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-productlist-component',
@@ -22,6 +23,7 @@ export class ProductlistComponent {
 
   homeService = inject(ProductService);
   constructor(private dialogRef: MatDialog) {}
+  private snackBar = inject(MatSnackBar);
 
   ngOnInit(): void {
     this.cargarProductos();
@@ -52,6 +54,16 @@ export class ProductlistComponent {
         this.cargarProductos();
       }
     });
-
   }
+
+  delete(product: IProduct) {
+        if (!confirm(`¿Eliminar "${product.title}"?`)) return;
+        this.homeService.delete(product.id).subscribe({
+            next: () => {
+                this.products.update((list) => list.filter((p) => p.id !== product.id));
+                this.snackBar.open('Producto eliminado', 'Cerrar', { duration: 3000 });
+            },
+            error: () => this.snackBar.open('Error al eliminar', 'Cerrar', { duration: 3000 }),
+        });
+    }
 }

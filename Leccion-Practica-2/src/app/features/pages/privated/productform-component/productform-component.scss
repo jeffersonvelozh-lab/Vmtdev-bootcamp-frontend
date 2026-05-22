@@ -1,8 +1,13 @@
 .form {
-  display: flex;
+  display: relative;
   flex-direction: column;
   gap: 16px;
-  margin-top: 12px;
+  margin-top: 10px;
+  max-width: 500px;
+}
+
+.full-width {
+  width: 100%;
 }
 
 .form-header {

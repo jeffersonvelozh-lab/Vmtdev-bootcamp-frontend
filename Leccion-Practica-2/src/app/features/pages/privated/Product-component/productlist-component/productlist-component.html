@@ -1,14 +1,15 @@
-@if (loading()) {
-  <div class="center">
-    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
-  </div>
-}
 <div class="header">
   <button mat-fab extended color="primary" (click)="abrirFormulario()">
     <mat-icon>add</mat-icon>
     Nuevo producto
   </button>
 </div>
+
+@if (loading()) {
+  <div class="center">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+}
 
 @if (errorMessage()) {
   <div>{{ errorMessage() }}</div>
@@ -48,7 +49,7 @@
             <mat-icon class="icon-edit">edit</mat-icon>
           </button>
 
-          <button mat-icon-button>
+          <button mat-icon-button (click)="delete(producto)">
             <mat-icon class="icon-delete">delete_forever</mat-icon>
           </button>
         </mat-card-actions>

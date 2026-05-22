@@ -8,31 +8,49 @@
   </mat-card-header>
 
   <mat-card-content>
-    <form class="form">
-      <mat-form-field appearance="outline">
+    <form class="form" [formGroup]="form">
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Nombre del producto</mat-label>
-        <input matInput placeholder="Nombre del producto" />
+        <input matInput formControlName="title" placeholder="Nombre del producto" />
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Precio</mat-label>
-        <input matInput placeholder="Precio" />
+        <input matInput formControlName="price" placeholder="Precio" />
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Categoría</mat-label>
+        <input matInput formControlName="category" placeholder="Categoría" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Stock</mat-label>
-        <input matInput placeholder="Stock" />
+        <input matInput formControlName="stock" placeholder="Stock" />
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Descripción</mat-label>
-        <input matInput placeholder="Descripción" />
+        <input matInput formControlName="description" placeholder="Descripción" />
       </mat-form-field>
 
       <div class="actions">
-        <button mat-stroked-button type="button">Cancelar</button>
+        <button mat-stroked-button type="button" (click)="onCancel()">Cancelar</button>
 
-        <button mat-flat-button color="primary" type="submit" class="submit-btn">Guardar</button>
+        <button
+          mat-flat-button
+          color="primary"
+          type="submit"
+          class="submit-btn"
+          (click)="onSubmit()"
+        >
+          <ng-container>
+            <span class="btn-content">
+              <mat-icon>{{ isEdit ? 'save' : 'add' }}</mat-icon>
+              {{ isEdit ? 'Guardar cambios' : 'Crear producto' }}
+            </span>
+          </ng-container>
+        </button>
       </div>
     </form>
   </mat-card-content>
