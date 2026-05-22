@@ -1,1 +1,49 @@
-<p>cartdetail-component works!</p>
+@if (loading()) {
+  <div class="center">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+}
+
+@if (errorMessage()) {
+  <div>{{ errorMessage() }}</div>
+}
+
+@if (!loading() && !errorMessage()) {
+  <div class="grid">
+    @for (carrito of carts(); track carrito.id) {
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title>UsuarioId: {{ carrito.userId }}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="products-list">
+            <p class="product-chip">
+              <strong>Productos</strong>
+              @for (product of carrito.products; track product.id) {
+                {{ product.title }},
+              }
+            </p>
+          </div>
+
+          <p>
+            <strong>Total de productos:</strong>
+            {{ carrito.totalProducts }}
+          </p>
+          <p>
+            <strong>Cantidad Total:</strong>
+            {{ carrito.totalQuantity }}
+          </p>
+          <p>
+            <strong>Total:</strong>
+            ${{ carrito.total }}
+          </p>
+          <p>
+            <strong>Descuento Total:</strong>
+            ${{ carrito.discountedTotal }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+}

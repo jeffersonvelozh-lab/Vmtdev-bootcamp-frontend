@@ -48,15 +48,11 @@
         </mat-card-content>
 
         <mat-card-actions class="card-actions">
-          <button mat-icon-button (click)="goToCartDetails(carrito.id)" routerLink="/:id">
+          <button mat-icon-button (click)="goToCartDetails(carrito.id)">
             <mat-icon class="icon-delete">visibility</mat-icon>
           </button>
 
-          <button mat-icon-button>
-            <mat-icon class="icon-edit">edit</mat-icon>
-          </button>
-
-          <button mat-icon-button>
+          <button mat-icon-button (click)="delete(carrito)">
             <mat-icon class="icon-delete">delete_forever</mat-icon>
           </button>
         </mat-card-actions>

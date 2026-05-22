@@ -5,7 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
-import { Router, RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CartFormComponent } from '../cart-form-component/cart-form-component';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-cart-component',
   imports: [MatCardModule, MatButtonModule, MatProgressSpinnerModule,
-    MatCardModule, MatIconModule, RouterLink],
+    MatCardModule, MatIconModule],
   templateUrl: './cart-component.html',
   styleUrl: './cart-component.scss',
 })

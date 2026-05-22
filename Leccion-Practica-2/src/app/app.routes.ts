@@ -51,7 +51,7 @@ export const routes: Routes = [
                   import('./features/pages/privated/carts/cart-component/cart-component').then((m) => m.CartComponent),
             },
             {
-              path: 'id',
+              path: ':id',
               loadComponent: () =>
                 import('./features/pages/privated/carts/cartdetail-component/cartdetail-component').then((m) => m.CartdetailComponent),
             }
