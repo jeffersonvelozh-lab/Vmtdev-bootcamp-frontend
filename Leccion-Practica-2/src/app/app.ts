@@ -9,7 +9,8 @@ import { MatDivider } from "@angular/material/divider";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, HeaderComponent, FooterComponent, MatDivider, MatDivider],
+  imports: [RouterOutlet, NavbarComponent, HeaderComponent, FooterComponent, 
+    MatDivider, MatDivider],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
